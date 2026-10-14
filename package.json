@@ -11,8 +11,7 @@
   },
   "dependencies": {
     "@astrojs/starlight": "^0.42.5",
-    "astro": "^7.2.10",
-    "starlight-blog": "^0.30.0"
+    "astro": "^7.2.10"
   },
   "allowScripts": {
     "esbuild": true

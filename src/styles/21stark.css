@@ -1,4 +1,5 @@
-/* 21Stark theme for Starlight: Starlight's indigo accents, which meet WCAG AA contrast in both themes. */
+/* 21Stark theme for Starlight: Tailwind's indigo scale as the accent. Accent text and links meet WCAG AA contrast
+ * in both themes; the dark theme's #6366f1 is for borders and fills, not text. */
 
 :root {
 	--sl-color-accent-low: #1e1b4b;

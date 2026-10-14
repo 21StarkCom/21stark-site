@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import starlightBlog from 'starlight-blog';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,8 +11,6 @@ export default defineConfig({
 			description: 'Policies and guides for the 21Stark fleet of tools.',
 			favicon: '/favicon.svg',
 			customCss: ['./src/styles/21stark.css'],
-			// No header link until the blog has posts: switch navigation to 'header-end' with the first one.
-			plugins: [starlightBlog({ title: 'Notes', navigation: 'none' })],
 			sidebar: [
 				{
 					label: 'Policies',
