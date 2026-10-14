@@ -1,0 +1,23 @@
+/* 21Stark theme for Starlight: Starlight's indigo accents, which meet WCAG AA contrast in both themes. */
+
+:root {
+	--sl-color-accent-low: #1e1b4b;
+	--sl-color-accent: #6366f1;
+	--sl-color-accent-high: #c7d2fe;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #e0e7ff;
+	--sl-color-accent: #4f46e5;
+	--sl-color-accent-high: #312e81;
+}
+
+/* Print always uses the light theme, so it needs the light-theme accent:
+ * the dark-theme #6366f1 on white is only 4.47:1, under AA. */
+@media print {
+	:root {
+		--sl-color-accent-low: #e0e7ff;
+		--sl-color-accent: #4f46e5;
+		--sl-color-accent-high: #312e81;
+	}
+}

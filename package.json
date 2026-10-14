@@ -1,0 +1,20 @@
+{
+  "name": "21stark-site",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.42.5",
+    "astro": "^7.2.10",
+    "starlight-blog": "^0.30.0"
+  },
+  "allowScripts": {
+    "esbuild": true
+  }
+}
