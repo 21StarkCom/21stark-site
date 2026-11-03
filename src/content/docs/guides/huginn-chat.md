@@ -35,6 +35,23 @@ installation ID, then grant the actions you want, for example every read:
 slp huginn allow <installation id> 'read:*'
 ```
 
+## Watch it work
+
+This 55-second video shows Huginn Chat connected to the Sleipnir app. It uses a throwaway Chrome profile and W3C's
+public "Before and After Demonstration" test pages. The video has no sound.
+
+<video controls preload="metadata" width="1280" height="800" src="/videos/huginn-chat.mp4"></video>
+
+In order, the video shows:
+
+- the data notice, and the **I understand** button;
+- **Open chat**, and the start of a chat;
+- the agent as it reads the page and clicks a link;
+- one script that the agent runs in the page (`evaluate`), and one accessibility check (`audit`);
+- the agent's answer, and the script that it ran.
+
+To watch it in another player, [download the Huginn Chat video (MP4, 1.5 MB)](/videos/huginn-chat.mp4).
+
 ## Chrome's debugger bar
 
 When the agent reads a page or acts in it, Huginn Chat uses Chrome's Debugger API. While it does, Chrome shows a bar
