@@ -32,9 +32,9 @@ at:
   console messages, and the results of scripts run in the page, which can include the page's storage and the cookies
   that scripts can read.
 - **Screenshots and PDFs** of a tab.
-- **Form values that an agent reads, passwords included:** Huginn Chat redacts nothing. It reads the value of any form
-  field, password, one-time code and card fields included, and types into any field, a sign-in form's password field
-  included.
+- **Form values that an agent reads, passwords included:** Huginn Chat does not redact form values. It reads the value
+  of any form field, password, one-time code and card fields included, and types into any field, a sign-in form's
+  password field included.
 - **Chat messages and attached files:** the messages the person writes in the side panel, the files they attach,
   paste or drop there, and, with each message, the current tab's title and address.
 - **Downloads that an agent starts:** the downloaded file, its name and its address.
