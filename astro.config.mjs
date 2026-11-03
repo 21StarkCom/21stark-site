@@ -17,6 +17,10 @@ export default defineConfig({
 					items: [
 						{ label: 'Overview', slug: 'policies' },
 						{
+							label: 'Huginn Chat',
+							items: [{ label: 'Privacy policy', slug: 'policies/huginn-chat/privacy' }],
+						},
+						{
 							label: 'Sleipnir Huginn',
 							items: [{ label: 'Privacy policy', slug: 'policies/huginn/privacy' }],
 						},
@@ -29,6 +33,10 @@ export default defineConfig({
 							items: [{ label: 'Privacy policy', slug: 'policies/huginn-secrets/privacy' }],
 						},
 					],
+				},
+				{
+					label: 'Guides',
+					items: [{ label: 'Get started with Huginn Chat', slug: 'guides/huginn-chat' }],
 				},
 			],
 		}),
