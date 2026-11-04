@@ -1,6 +1,6 @@
 ---
 title: Get started with Huginn Chat
-description: What Huginn Chat needs, how to connect it, and what Chrome's debugger bar means.
+description: What Huginn Chat needs, how to connect it or install it for review, and what Chrome's debugger bar means.
 ---
 
 Huginn Chat is a Chrome extension with a chat in Chrome's side panel. You talk to an AI agent, Claude Code or Codex,
@@ -14,7 +14,8 @@ Sleipnir app on your Mac: without the app, the chat cannot start, and the extens
 - **The Sleipnir app, with its native host.** The native host is the program Chrome starts to let Huginn Chat talk to
   Sleipnir, through Chrome's native messaging. Sleipnir comes from 21Stark's private Homebrew tap, or from its
   installer package. For access, write to
-  [contact@21stark.com](mailto:contact@21stark.com).
+  [contact@21stark.com](mailto:contact@21stark.com). The installer package for review is public: see
+  [Install for review](#install-for-review).
 - **Claude Code or Codex, signed in.** The chat runs the agent you pick on your Mac, under your own Anthropic or
   OpenAI account. Install the `claude` or `codex` command and sign in to it once in a terminal.
 
@@ -34,6 +35,31 @@ installation ID, then grant the actions you want, for example every read:
 ```sh
 slp huginn allow <installation id> 'read:*'
 ```
+
+## Install for review
+
+To review Huginn Chat, install Sleipnir from its public installer package. The package is signed and notarized by
+Apple, and it runs on a Mac with Apple silicon only.
+
+- [Download the Sleipnir installer package for review (PKG, 56 MB)](https://github.com/21StarkCom/21stark-site/releases/download/sleipnir-review-0.78.0/Sleipnir-Review_0.78.0_darwin_arm64.pkg).
+  The [sleipnir-review-0.78.0 release](https://github.com/21StarkCom/21stark-site/releases/tag/sleipnir-review-0.78.0)
+  also holds its `.sha256` file.
+- Its SHA-256 is `dd4166d9b0739da1bc715c7044e3ffa7d304120a15d7e6e083066266bbe3813f`. To check it, run
+  `shasum -a 256 ~/Downloads/Sleipnir-Review_0.78.0_darwin_arm64.pkg` in a terminal.
+
+1. Open the package, and finish the installer. It asks for an administrator's password, and it registers Sleipnir's
+   native host with Chrome for you.
+2. When the installer finishes, it can open a **Set up Huginn** page, `chrome://extensions` and a Finder window. They
+   are for Huginn, a different extension. Huginn Chat does not need their steps, so you can close them.
+3. Open Chrome, with Huginn Chat installed from its Chrome Web Store item.
+4. Open Huginn Chat from the toolbar. Read the data notice and press **I understand**.
+
+Huginn Chat's popup then says **Connected**. Press **Open chat**, and the chat panel opens in Chrome's side panel.
+
+A chat needs your own Claude Code or Codex, installed and signed in on the Mac, as [What you need](#what-you-need)
+says. The installer package has no agent account of its own. For a chat that acts on a tab, also grant actions, as
+the end of [Connect it](#connect-it) shows. The video in the Chrome Web Store listing shows a chat, and so does the
+video in [Watch it work](#watch-it-work).
 
 ## Watch it work
 
