@@ -3,7 +3,7 @@ title: Sleipnir Huginn — Privacy Policy
 description: How the Sleipnir Huginn Chrome extension handles information.
 ---
 
-_Last updated: October 14, 2026_
+_Last updated: November 4, 2026_
 
 ## 1. What Huginn is
 
@@ -70,4 +70,4 @@ to train AI models.
 ## 7. Changes and contact
 
 We may change this policy; the updated version will be posted on this page with a new date at the top. Questions:
-[aryeh.kiovetsky@evinced.com](mailto:aryeh.kiovetsky@evinced.com).
+[contact@21stark.com](mailto:contact@21stark.com).

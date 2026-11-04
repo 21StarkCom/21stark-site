@@ -14,7 +14,7 @@ Sleipnir app on your Mac: without the app, the chat cannot start, and the extens
 - **The Sleipnir app, with its native host.** The native host is the program Chrome starts to let Huginn Chat talk to
   Sleipnir, through Chrome's native messaging. Sleipnir comes from 21Stark's private Homebrew tap, or from its
   installer package. For access, write to
-  [aryeh.kiovetsky@evinced.com](mailto:aryeh.kiovetsky@evinced.com).
+  [contact@21stark.com](mailto:contact@21stark.com).
 - **Claude Code or Codex, signed in.** The chat runs the agent you pick on your Mac, under your own Anthropic or
   OpenAI account. Install the `claude` or `codex` command and sign in to it once in a terminal.
 
