@@ -3,7 +3,7 @@ title: Huginn Chat — Privacy Policy
 description: How the Huginn Chat Chrome extension handles information.
 ---
 
-_Last updated: November 3, 2026_
+_Last updated: November 4, 2026_
 
 ## 1. What Huginn Chat is
 
@@ -108,4 +108,4 @@ models. No person at 21Stark or Evinced reads it.
 ## 8. Changes and contact
 
 We may change this policy; the updated version will be posted on this page with a new date at the top. Questions:
-[aryeh.kiovetsky@evinced.com](mailto:aryeh.kiovetsky@evinced.com).
+[contact@21stark.com](mailto:contact@21stark.com).
