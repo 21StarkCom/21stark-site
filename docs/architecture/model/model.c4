@@ -1,0 +1,96 @@
+// The model of the 21Stark site (gh.21stark.com): the people who read it, the parts
+// that build and serve it, and the systems that link to it. The site is static: no
+// server of ours runs it, and its pages call no other system.
+
+model {
+  operator = person 'Operator' {
+    description 'Writes the policies and the guides, merges each change to main, and uploads the review package of a store review.'
+  }
+
+  extensionUser = person 'Extension user' {
+    description 'A user of a Huginn extension who reads its privacy policy or the Huginn Chat guide.'
+  }
+
+  storeReviewer = person 'Store reviewer' {
+    description 'A Chrome Web Store reviewer who checks the privacy policy of a Huginn extension and installs Sleipnir for a review of Huginn Chat.'
+  }
+
+  stark-site = softwareSystem '21Stark site' {
+    summary 'The privacy policies and the guides of the fleet, at gh.21stark.com.'
+    description 'The public site gh.21stark.com: the privacy policy of each Huginn extension, which its Chrome Web Store listing links to, and the Huginn Chat guide. A page keeps its address, because a store listing links to it.'
+
+    website = webApp 'Website' {
+      technology 'Astro, Starlight, static HTML'
+      summary 'The policies, the guide and its video, in the browser.'
+      description 'Shows the privacy policy of each Huginn extension, and the Huginn Chat guide with its video and its install steps for a review, in the browser.'
+      metadata {
+        code ['astro.config.mjs', 'src/content.config.ts', 'src/styles/']
+      }
+    }
+
+    siteWorkflow = container 'Site workflow' {
+      technology 'GitHub Actions, Node.js 24'
+      description 'Builds the site with Astro on each pull request, and on each push to main builds it and deploys it to GitHub Pages.'
+      metadata {
+        code '.github/workflows/site.yml'
+      }
+    }
+
+    pages = database 'Page sources' {
+      technology 'Git, Markdown and MDX files'
+      description 'The text of each policy and guide, and the video of the Huginn Chat guide, in the 21stark-site repo.'
+      metadata {
+        code ['src/content/docs/', 'public/']
+      }
+    }
+
+    reviewDownloads = database 'Review downloads' {
+      technology 'GitHub Releases'
+      description 'The signed Sleipnir installer package for a Chrome Web Store review of Huginn Chat, with its SHA-256 file, as a release of the 21stark-site repo.'
+    }
+  }
+
+  githubPages = externalSystem 'GitHub Pages' {
+    description 'Hosts the built site at gh.21stark.com and sends its pages to the browser.'
+    icon tech:github
+  }
+
+  chromeWebStore = externalSystem 'Chrome Web Store' {
+    summary 'Lists the Huginn extensions, and links each listing to its privacy policy.'
+    description 'Lists the Huginn extensions. Each listing links to the privacy policy of its extension, and the Huginn Chat listing links to its guide for the reviewers.'
+    icon tech:chrome-web-store
+  }
+
+  huginnChat = externalSystem 'Huginn Chat' {
+    description 'The Chrome extension of Sleipnir with a side-panel chat. Its data notice links to its privacy policy on the site.'
+    metadata {
+      fleetRepo 'sleipnir'
+    }
+  }
+
+  // People
+  operator -[sync]-> stark-site.pages 'writes the policies and the guides in'
+  operator -[sync]-> stark-site.reviewDownloads 'uploads the review package of a store review to'
+  extensionUser -[sync]-> stark-site.website 'reads the privacy policies and the guide in'
+  storeReviewer -[sync]-> stark-site.website 'reads the privacy policies and the review steps in'
+  storeReviewer -[sync]-> stark-site.reviewDownloads 'downloads the Sleipnir installer package from'
+
+  // The build and the publish
+  stark-site.siteWorkflow -[sync]-> stark-site.pages 'builds the site from' {
+    technology 'Git checkout'
+  }
+  stark-site.siteWorkflow -[sync]-> githubPages 'deploys the built site to' {
+    technology 'HTTPS'
+  }
+  githubPages -[sync]-> stark-site.website 'delivers to the browser' {
+    technology 'HTTPS'
+  }
+
+  // The links to the site
+  chromeWebStore -[sync]-> stark-site.website 'links each listing to its privacy policy in' {
+    technology 'HTTPS link'
+  }
+  huginnChat -[sync]-> stark-site.website 'links its data notice to its privacy policy in' {
+    technology 'HTTPS link'
+  }
+}

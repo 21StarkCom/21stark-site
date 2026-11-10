@@ -1,0 +1,28 @@
+// Written by floorplan scan. Do not edit.
+// One code link for each path of a code key. floorplan scan and floorplan build write this file again.
+
+model {
+  extend stark-site.pages {
+    link https://github.com/21StarkCom/21stark-site/tree/HEAD/public 'code: public/'
+  }
+
+  extend stark-site.pages {
+    link https://github.com/21StarkCom/21stark-site/tree/HEAD/src/content/docs 'code: src/content/docs/'
+  }
+
+  extend stark-site.siteWorkflow {
+    link https://github.com/21StarkCom/21stark-site/tree/HEAD/.github/workflows/site.yml 'code: .github/workflows/site.yml'
+  }
+
+  extend stark-site.website {
+    link https://github.com/21StarkCom/21stark-site/tree/HEAD/astro.config.mjs 'code: astro.config.mjs'
+  }
+
+  extend stark-site.website {
+    link https://github.com/21StarkCom/21stark-site/tree/HEAD/src/content.config.ts 'code: src/content.config.ts'
+  }
+
+  extend stark-site.website {
+    link https://github.com/21StarkCom/21stark-site/tree/HEAD/src/styles 'code: src/styles/'
+  }
+}

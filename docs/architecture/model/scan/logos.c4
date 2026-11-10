@@ -1,0 +1,12 @@
+// Written by floorplan scan. Do not edit.
+// The logo of the language of each element of stack.c4. The view stack applies it with the line
+// "global style languageLogos". floorplan scan and floorplan build write this file again.
+
+global {
+  styleGroup languageLogos {
+    style
+      stark-site.website {
+      icon tech:typescript
+    }
+  }
+}

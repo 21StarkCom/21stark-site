@@ -1,0 +1,31 @@
+---
+title: "Containers: 21Stark site"
+---
+graph TB
+  Operator@{ icon: "fa:user", shape: rounded, label: "Operator" }
+  ExtensionUser@{ icon: "fa:user", shape: rounded, label: "Extension user" }
+  StoreReviewer@{ icon: "fa:user", shape: rounded, label: "Store reviewer" }
+  GithubPages@{ shape: rectangle, label: "GitHub Pages" }
+  ChromeWebStore@{ shape: rectangle, label: "Chrome Web Store" }
+  HuginnChat@{ shape: rectangle, label: "Huginn Chat" }
+  subgraph Stark_site["`21Stark site`"]
+    Stark_site.ReviewDownloads@{ shape: disk, label: "Review downloads" }
+    Stark_site.Website@{ shape: rounded, label: "Website" }
+    Stark_site.SiteWorkflow@{ shape: rectangle, label: "Site workflow" }
+    Stark_site.Pages@{ shape: disk, label: "Page sources" }
+  end
+  Operator -- "`writes the policies and the guides in`" --> Stark_site.Pages
+  Operator -- "`uploads the review package of a store review to`" --> Stark_site.ReviewDownloads
+  ExtensionUser -- "`reads the privacy policies and the guide in`" --> Stark_site.Website
+  StoreReviewer -- "`reads the privacy policies and the review steps in`" --> Stark_site.Website
+  StoreReviewer -- "`downloads the Sleipnir installer package from`" --> Stark_site.ReviewDownloads
+  GithubPages -- "`delivers to the browser`" --> Stark_site.Website
+  ChromeWebStore -- "`links each listing to its privacy policy in`" --> Stark_site.Website
+  HuginnChat -- "`links its data notice to its privacy policy in`" --> Stark_site.Website
+  Stark_site.SiteWorkflow -- "`builds the site from`" --> Stark_site.Pages
+  Stark_site.SiteWorkflow -- "`deploys the built site to`" --> GithubPages
+  classDef c4_external fill:#F1F0EF,stroke:#c8c7c6,color:#504f4e
+  class GithubPages,ChromeWebStore,HuginnChat c4_external
+  classDef c4_container fill:#5EB1EF,stroke:#2a8bc6,color:#000000
+  class Stark_site.ReviewDownloads,Stark_site.Website,Stark_site.SiteWorkflow,Stark_site.Pages c4_container
+  linkStyle 0,1,2,3,4,5,6,7,8,9 stroke:#8D8D8D
