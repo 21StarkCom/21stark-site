@@ -20,8 +20,8 @@ graph TB
   StoreReviewer -- "`reads the privacy policies and the review steps in`" --> Stark_site.Website
   StoreReviewer -- "`downloads the Sleipnir installer package from`" --> Stark_site.ReviewDownloads
   GithubPages -- "`delivers to the browser`" --> Stark_site.Website
-  ChromeWebStore -- "`links each listing to its privacy policy in`" --> Stark_site.Website
-  HuginnChat -- "`links its data notice to its privacy policy in`" --> Stark_site.Website
+  ChromeWebStore -- "`links each listing to its privacy policy and its guide in`" --> Stark_site.Website
+  HuginnChat -- "`links to its privacy policy and its guide in`" --> Stark_site.Website
   Stark_site.SiteWorkflow -- "`builds the site from`" --> Stark_site.Pages
   Stark_site.SiteWorkflow -- "`deploys the built site to`" --> GithubPages
   classDef c4_external fill:#F1F0EF,stroke:#c8c7c6,color:#504f4e

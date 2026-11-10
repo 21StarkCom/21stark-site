@@ -279,7 +279,7 @@
         "txt": "Lists the Huginn extensions, and links each listing to its privacy policy."
       },
       "description": {
-        "txt": "Lists the Huginn extensions. Each listing links to the privacy policy of its extension, and the Huginn Chat listing links to its guide for the reviewers."
+        "txt": "Lists the Huginn extensions. Each listing links to the privacy policy of its extension, and the listing and the test instructions of Huginn Chat link to its guide."
       },
       "title": "Chrome Web Store",
       "kind": "externalSystem",
@@ -294,7 +294,7 @@
         "color": "c4-external"
       },
       "description": {
-        "txt": "The Chrome extension of Sleipnir with a side-panel chat. Its data notice links to its privacy policy on the site."
+        "txt": "The Chrome extension of Sleipnir with a side-panel chat. Its data notice links to its privacy policy, and with no Sleipnir app its popup links to its guide."
       },
       "title": "Huginn Chat",
       "kind": "externalSystem",
@@ -513,7 +513,7 @@
     "1vobtpu": {
       "line": "solid",
       "technology": "HTTPS link",
-      "title": "links each listing to its privacy policy in",
+      "title": "links each listing to its privacy policy and its guide in",
       "source": {
         "model": "chromeWebStore"
       },
@@ -526,7 +526,7 @@
     "iwgpe5": {
       "line": "solid",
       "technology": "HTTPS link",
-      "title": "links its data notice to its privacy policy in",
+      "title": "links to its privacy policy and its guide in",
       "source": {
         "model": "huginnChat"
       },
@@ -724,7 +724,7 @@
           }
         ]
       },
-      "hash": "wxQUE_1hBsYSOBE6adfVf4aLaTuLu6rhEcb4aOeXe0Q",
+      "hash": "aZYV1ZP6HsksBuja_GVjX57s42dwWxeHWSwsJL2yRyE",
       "bounds": {
         "x": 0,
         "y": 0,
@@ -887,7 +887,7 @@
             "size": "md"
           },
           "description": {
-            "txt": "The Chrome extension of Sleipnir with a side-panel chat. Its data notice links to its privacy policy on the site."
+            "txt": "The Chrome extension of Sleipnir with a side-panel chat. Its data notice links to its privacy policy, and with no Sleipnir app its popup links to its guide."
           },
           "tags": [],
           "metadata": {
@@ -900,10 +900,10 @@
           "width": 320,
           "height": 180,
           "labelBBox": {
-            "x": 21,
-            "y": 47,
-            "width": 277,
-            "height": 83
+            "x": 19,
+            "y": 38,
+            "width": 282,
+            "height": 101
           }
         },
         {
@@ -1170,7 +1170,7 @@
           "id": "xi37eq",
           "source": "chromeWebStore",
           "target": "stark-site",
-          "label": "links each listing to\nthe privacy policy in",
+          "label": "links each listing to its\nprivacy policy and its guide in",
           "points": [
             [
               1350,
@@ -1202,9 +1202,9 @@
             ]
           ],
           "labelBBox": {
-            "x": 1278,
+            "x": 1277,
             "y": 240,
-            "width": 137,
+            "width": 196,
             "height": 42
           },
           "parent": null,
@@ -1222,41 +1222,41 @@
           "id": "1vn5j5q",
           "source": "huginnChat",
           "target": "stark-site",
-          "label": "links its data notice to\nthe privacy policy in",
+          "label": "links to its privacy\npolicy and its guide in",
           "points": [
             [
               1720,
-              164
+              179
             ],
             [
-              1637,
-              201
+              1653,
+              214
             ],
             [
-              1534,
-              245
+              1574,
+              252
             ],
             [
-              1441,
+              1500,
               282
             ],
             [
-              1359,
-              314
+              1399,
+              323
             ],
             [
-              1267,
-              347
+              1283,
+              359
             ],
             [
               1190,
-              374
+              386
             ]
           ],
           "labelBBox": {
-            "x": 1538,
+            "x": 1586,
             "y": 240,
-            "width": 150,
+            "width": 148,
             "height": 42
           },
           "parent": null,
@@ -1339,7 +1339,7 @@
           }
         ]
       },
-      "hash": "1GgSG5WrGpcmbWvnYrb7uCuk0EPI7qxyi8l_mqGfEZg",
+      "hash": "RoteSzqev2THakokC_KLh1KoMPtzuROCS-GdEVmx3jA",
       "bounds": {
         "x": 0,
         "y": 0,
@@ -1541,7 +1541,7 @@
             "size": "md"
           },
           "description": {
-            "txt": "The Chrome extension of Sleipnir with a side-panel chat. Its data notice links to its privacy policy on the site."
+            "txt": "The Chrome extension of Sleipnir with a side-panel chat. Its data notice links to its privacy policy, and with no Sleipnir app its popup links to its guide."
           },
           "tags": [],
           "metadata": {
@@ -1554,10 +1554,10 @@
           "width": 320,
           "height": 180,
           "labelBBox": {
-            "x": 21,
-            "y": 47,
-            "width": 277,
-            "height": 83
+            "x": 19,
+            "y": 38,
+            "width": 282,
+            "height": 101
           }
         },
         {
@@ -2099,7 +2099,7 @@
           "id": "1wo1uzb",
           "source": "chromeWebStore",
           "target": "stark-site.website",
-          "label": "links each listing to\nits privacy policy in",
+          "label": "links each listing to its\nprivacy policy and its guide in",
           "points": [
             [
               1833,
@@ -2133,7 +2133,7 @@
           "labelBBox": {
             "x": 1739,
             "y": 241,
-            "width": 132,
+            "width": 196,
             "height": 55
           },
           "parent": null,
@@ -2150,7 +2150,7 @@
           "id": "1fw6ru3",
           "source": "huginnChat",
           "target": "stark-site.website",
-          "label": "links its data notice\nto its privacy policy in",
+          "label": "links to its privacy\npolicy and its guide in",
           "points": [
             [
               1167,
@@ -2170,9 +2170,9 @@
             ]
           ],
           "labelBBox": {
-            "x": 1250,
+            "x": 1249,
             "y": 241,
-            "width": 147,
+            "width": 148,
             "height": 55
           },
           "parent": null,

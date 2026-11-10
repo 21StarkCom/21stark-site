@@ -18,11 +18,11 @@ views {
       technology ''
     }
     include chromeWebStore -> stark-site with {
-      title 'links each listing to the privacy policy in'
+      title 'links each listing to its privacy policy and its guide in'
       technology ''
     }
     include huginnChat -> stark-site with {
-      title 'links its data notice to the privacy policy in'
+      title 'links to its privacy policy and its guide in'
       technology ''
     }
     exclude githubPages -> stark-site

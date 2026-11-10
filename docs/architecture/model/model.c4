@@ -57,12 +57,12 @@ model {
 
   chromeWebStore = externalSystem 'Chrome Web Store' {
     summary 'Lists the Huginn extensions, and links each listing to its privacy policy.'
-    description 'Lists the Huginn extensions. Each listing links to the privacy policy of its extension, and the Huginn Chat listing links to its guide for the reviewers.'
+    description 'Lists the Huginn extensions. Each listing links to the privacy policy of its extension, and the listing and the test instructions of Huginn Chat link to its guide.'
     icon tech:chrome-web-store
   }
 
   huginnChat = externalSystem 'Huginn Chat' {
-    description 'The Chrome extension of Sleipnir with a side-panel chat. Its data notice links to its privacy policy on the site.'
+    description 'The Chrome extension of Sleipnir with a side-panel chat. Its data notice links to its privacy policy, and with no Sleipnir app its popup links to its guide.'
     metadata {
       fleetRepo 'sleipnir'
     }
@@ -87,10 +87,10 @@ model {
   }
 
   // The links to the site
-  chromeWebStore -[sync]-> stark-site.website 'links each listing to its privacy policy in' {
+  chromeWebStore -[sync]-> stark-site.website 'links each listing to its privacy policy and its guide in' {
     technology 'HTTPS link'
   }
-  huginnChat -[sync]-> stark-site.website 'links its data notice to its privacy policy in' {
+  huginnChat -[sync]-> stark-site.website 'links to its privacy policy and its guide in' {
     technology 'HTTPS link'
   }
 }
