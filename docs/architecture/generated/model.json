@@ -1,0 +1,2299 @@
+{
+  "_stage": "layouted",
+  "projectId": "stark-site",
+  "project": {
+    "id": "stark-site",
+    "title": "21Stark site",
+    "inferTechnologyFromIcon": false
+  },
+  "specification": {
+    "tags": {},
+    "elements": {
+      "person": {
+        "notation": "Person",
+        "style": {
+          "shape": "person",
+          "color": "c4-person"
+        }
+      },
+      "softwareSystem": {
+        "notation": "Software System",
+        "style": {
+          "color": "c4-system"
+        }
+      },
+      "externalSystem": {
+        "notation": "Software System (external)",
+        "style": {
+          "color": "c4-external"
+        }
+      },
+      "container": {
+        "notation": "Container",
+        "style": {
+          "color": "c4-container"
+        }
+      },
+      "webApp": {
+        "notation": "Container: Web Application",
+        "style": {
+          "shape": "browser",
+          "color": "c4-container"
+        }
+      },
+      "mobileApp": {
+        "notation": "Container: Mobile App",
+        "style": {
+          "shape": "mobile",
+          "color": "c4-container"
+        }
+      },
+      "database": {
+        "notation": "Container: Database",
+        "style": {
+          "shape": "storage",
+          "color": "c4-container"
+        }
+      },
+      "queue": {
+        "notation": "Container: Queue",
+        "style": {
+          "shape": "queue",
+          "color": "c4-container"
+        }
+      },
+      "component": {
+        "notation": "Component",
+        "style": {
+          "color": "c4-component"
+        }
+      }
+    },
+    "relationships": {
+      "async": {
+        "line": "dotted"
+      },
+      "sync": {
+        "line": "solid"
+      }
+    },
+    "deployments": {
+      "environment": {
+        "notation": "Deployment: Environment",
+        "style": {
+          "color": "c4-external"
+        }
+      },
+      "gcpProject": {
+        "notation": "Deployment: GCP Project",
+        "style": {
+          "color": "c4-external"
+        }
+      },
+      "network": {
+        "notation": "Deployment: Network",
+        "style": {
+          "color": "c4-external"
+        }
+      },
+      "subnet": {
+        "notation": "Deployment: Subnet",
+        "style": {
+          "color": "c4-external"
+        }
+      },
+      "cluster": {
+        "notation": "Deployment: Kubernetes Cluster",
+        "style": {
+          "color": "c4-system"
+        }
+      },
+      "vm": {
+        "notation": "Deployment: Virtual Machine",
+        "style": {
+          "color": "c4-system"
+        }
+      },
+      "nat": {
+        "notation": "Deployment: NAT",
+        "style": {
+          "color": "c4-external"
+        }
+      },
+      "managedService": {
+        "notation": "Deployment: Managed Service",
+        "style": {
+          "color": "c4-component"
+        }
+      }
+    },
+    "metadataKeys": [
+      "code",
+      "fleetRepo",
+      "frameworks",
+      "language"
+    ],
+    "customColors": {
+      "c4-person": {
+        "elements": {
+          "fill": "#113264",
+          "stroke": "#001541",
+          "hiContrast": "#edfeff",
+          "loContrast": "#d9e9ff"
+        },
+        "relationships": {
+          "line": "#0d264b",
+          "label": "#edfeff",
+          "labelBg": "#113264"
+        }
+      },
+      "c4-system": {
+        "elements": {
+          "fill": "#0D74CE",
+          "stroke": "#0052a6",
+          "hiContrast": "#e0ffff",
+          "loContrast": "#cbffff"
+        },
+        "relationships": {
+          "line": "#0a579b",
+          "label": "#e0ffff",
+          "labelBg": "#0D74CE"
+        }
+      },
+      "c4-container": {
+        "elements": {
+          "fill": "#5EB1EF",
+          "stroke": "#2a8bc6",
+          "hiContrast": "#000000",
+          "loContrast": "#000000"
+        },
+        "relationships": {
+          "line": "#4785b3",
+          "label": "#000000",
+          "labelBg": "#5EB1EF"
+        }
+      },
+      "c4-component": {
+        "elements": {
+          "fill": "#ACD8FC",
+          "stroke": "#84b0d3",
+          "hiContrast": "#003c58",
+          "loContrast": "#184c6a"
+        },
+        "relationships": {
+          "line": "#81a2bd",
+          "label": "#003c58",
+          "labelBg": "#ACD8FC"
+        }
+      },
+      "c4-external": {
+        "elements": {
+          "fill": "#F1F0EF",
+          "stroke": "#c8c7c6",
+          "hiContrast": "#504f4e",
+          "loContrast": "#61605f"
+        },
+        "relationships": {
+          "line": "#b5b4b3",
+          "label": "#504f4e",
+          "labelBg": "#F1F0EF"
+        }
+      }
+    }
+  },
+  "elements": {
+    "operator": {
+      "notation": "Person",
+      "style": {
+        "shape": "person",
+        "color": "c4-person"
+      },
+      "description": {
+        "txt": "Writes the policies and the guides, merges each change to main, and uploads the review package of a store review."
+      },
+      "title": "Operator",
+      "kind": "person",
+      "id": "operator"
+    },
+    "extensionUser": {
+      "notation": "Person",
+      "style": {
+        "shape": "person",
+        "color": "c4-person"
+      },
+      "description": {
+        "txt": "A user of a Huginn extension who reads its privacy policy or the Huginn Chat guide."
+      },
+      "title": "Extension user",
+      "kind": "person",
+      "id": "extensionUser"
+    },
+    "storeReviewer": {
+      "notation": "Person",
+      "style": {
+        "shape": "person",
+        "color": "c4-person"
+      },
+      "description": {
+        "txt": "A Chrome Web Store reviewer who checks the privacy policy of a Huginn extension and installs Sleipnir for a review of Huginn Chat."
+      },
+      "title": "Store reviewer",
+      "kind": "person",
+      "id": "storeReviewer"
+    },
+    "stark-site": {
+      "notation": "Software System",
+      "style": {
+        "color": "c4-system"
+      },
+      "summary": {
+        "txt": "The privacy policies and the guides of the fleet, at gh.21stark.com."
+      },
+      "description": {
+        "txt": "The public site gh.21stark.com: the privacy policy of each Huginn extension, which its Chrome Web Store listing links to, and the Huginn Chat guide. A page keeps its address, because a store listing links to it."
+      },
+      "title": "21Stark site",
+      "kind": "softwareSystem",
+      "id": "stark-site"
+    },
+    "githubPages": {
+      "notation": "Software System (external)",
+      "style": {
+        "color": "c4-external",
+        "icon": "tech:github"
+      },
+      "description": {
+        "txt": "Hosts the built site at gh.21stark.com and sends its pages to the browser."
+      },
+      "title": "GitHub Pages",
+      "kind": "externalSystem",
+      "id": "githubPages"
+    },
+    "chromeWebStore": {
+      "notation": "Software System (external)",
+      "style": {
+        "color": "c4-external",
+        "icon": "tech:chrome-web-store"
+      },
+      "summary": {
+        "txt": "Lists the Huginn extensions, and links each listing to its privacy policy."
+      },
+      "description": {
+        "txt": "Lists the Huginn extensions. Each listing links to the privacy policy of its extension, and the listing and the test instructions of Huginn Chat link to its guide."
+      },
+      "title": "Chrome Web Store",
+      "kind": "externalSystem",
+      "id": "chromeWebStore"
+    },
+    "huginnChat": {
+      "metadata": {
+        "fleetRepo": "sleipnir"
+      },
+      "notation": "Software System (external)",
+      "style": {
+        "color": "c4-external"
+      },
+      "description": {
+        "txt": "The Chrome extension of Sleipnir with a side-panel chat. Its data notice links to its privacy policy, and with no Sleipnir app its popup links to its guide."
+      },
+      "title": "Huginn Chat",
+      "kind": "externalSystem",
+      "id": "huginnChat"
+    },
+    "stark-site.website": {
+      "metadata": {
+        "code": [
+          "astro.config.mjs",
+          "src/content.config.ts",
+          "src/styles/"
+        ],
+        "frameworks": "astro",
+        "language": "TypeScript"
+      },
+      "notation": "Container: Web Application",
+      "style": {
+        "shape": "browser",
+        "color": "c4-container"
+      },
+      "summary": {
+        "txt": "The policies, the guide and its video, in the browser."
+      },
+      "technology": "Astro, Starlight, static HTML",
+      "description": {
+        "txt": "Shows the privacy policy of each Huginn extension, and the Huginn Chat guide with its video and its install steps for a review, in the browser."
+      },
+      "title": "Website",
+      "kind": "webApp",
+      "id": "stark-site.website",
+      "tags": null,
+      "links": [
+        {
+          "url": "https://github.com/21StarkCom/21stark-site/tree/HEAD/astro.config.mjs",
+          "title": "code: astro.config.mjs"
+        },
+        {
+          "url": "https://github.com/21StarkCom/21stark-site/tree/HEAD/src/content.config.ts",
+          "title": "code: src/content.config.ts"
+        },
+        {
+          "url": "https://github.com/21StarkCom/21stark-site/tree/HEAD/src/styles",
+          "title": "code: src/styles/"
+        }
+      ]
+    },
+    "stark-site.siteWorkflow": {
+      "metadata": {
+        "code": ".github/workflows/site.yml"
+      },
+      "notation": "Container",
+      "style": {
+        "color": "c4-container"
+      },
+      "technology": "GitHub Actions, Node.js 24",
+      "description": {
+        "txt": "Builds the site with Astro on each pull request, and on each push to main builds it and deploys it to GitHub Pages."
+      },
+      "title": "Site workflow",
+      "kind": "container",
+      "id": "stark-site.siteWorkflow",
+      "tags": null,
+      "links": [
+        {
+          "url": "https://github.com/21StarkCom/21stark-site/tree/HEAD/.github/workflows/site.yml",
+          "title": "code: .github/workflows/site.yml"
+        }
+      ]
+    },
+    "stark-site.pages": {
+      "metadata": {
+        "code": [
+          "src/content/docs/",
+          "public/"
+        ]
+      },
+      "notation": "Container: Database",
+      "style": {
+        "shape": "storage",
+        "color": "c4-container"
+      },
+      "technology": "Git, Markdown and MDX files",
+      "description": {
+        "txt": "The text of each policy and guide, and the video of the Huginn Chat guide, in the 21stark-site repo."
+      },
+      "title": "Page sources",
+      "kind": "database",
+      "id": "stark-site.pages",
+      "tags": null,
+      "links": [
+        {
+          "url": "https://github.com/21StarkCom/21stark-site/tree/HEAD/public",
+          "title": "code: public/"
+        },
+        {
+          "url": "https://github.com/21StarkCom/21stark-site/tree/HEAD/src/content/docs",
+          "title": "code: src/content/docs/"
+        }
+      ]
+    },
+    "stark-site.reviewDownloads": {
+      "notation": "Container: Database",
+      "style": {
+        "shape": "storage",
+        "color": "c4-container"
+      },
+      "technology": "GitHub Releases",
+      "description": {
+        "txt": "The signed Sleipnir installer package for a Chrome Web Store review of Huginn Chat, with its SHA-256 file, as a release of the 21stark-site repo."
+      },
+      "title": "Review downloads",
+      "kind": "database",
+      "id": "stark-site.reviewDownloads"
+    }
+  },
+  "relations": {
+    "qcp1e3": {
+      "line": "solid",
+      "title": "writes the policies and the guides in",
+      "source": {
+        "model": "operator"
+      },
+      "target": {
+        "model": "stark-site.pages"
+      },
+      "kind": "sync",
+      "id": "qcp1e3"
+    },
+    "gs4us9": {
+      "line": "solid",
+      "title": "uploads the review package of a store review to",
+      "source": {
+        "model": "operator"
+      },
+      "target": {
+        "model": "stark-site.reviewDownloads"
+      },
+      "kind": "sync",
+      "id": "gs4us9"
+    },
+    "prp08m": {
+      "line": "solid",
+      "title": "reads the privacy policies and the guide in",
+      "source": {
+        "model": "extensionUser"
+      },
+      "target": {
+        "model": "stark-site.website"
+      },
+      "kind": "sync",
+      "id": "prp08m"
+    },
+    "14ey8vo": {
+      "line": "solid",
+      "title": "reads the privacy policies and the review steps in",
+      "source": {
+        "model": "storeReviewer"
+      },
+      "target": {
+        "model": "stark-site.website"
+      },
+      "kind": "sync",
+      "id": "14ey8vo"
+    },
+    "11gixhv": {
+      "line": "solid",
+      "title": "downloads the Sleipnir installer package from",
+      "source": {
+        "model": "storeReviewer"
+      },
+      "target": {
+        "model": "stark-site.reviewDownloads"
+      },
+      "kind": "sync",
+      "id": "11gixhv"
+    },
+    "1c1v1cg": {
+      "line": "solid",
+      "technology": "Git checkout",
+      "title": "builds the site from",
+      "source": {
+        "model": "stark-site.siteWorkflow"
+      },
+      "target": {
+        "model": "stark-site.pages"
+      },
+      "kind": "sync",
+      "id": "1c1v1cg"
+    },
+    "7cqbn": {
+      "line": "solid",
+      "technology": "HTTPS",
+      "title": "deploys the built site to",
+      "source": {
+        "model": "stark-site.siteWorkflow"
+      },
+      "target": {
+        "model": "githubPages"
+      },
+      "kind": "sync",
+      "id": "7cqbn"
+    },
+    "1i4wdwn": {
+      "line": "solid",
+      "technology": "HTTPS",
+      "title": "delivers to the browser",
+      "source": {
+        "model": "githubPages"
+      },
+      "target": {
+        "model": "stark-site.website"
+      },
+      "kind": "sync",
+      "id": "1i4wdwn"
+    },
+    "1vobtpu": {
+      "line": "solid",
+      "technology": "HTTPS link",
+      "title": "links each listing to its privacy policy and its guide in",
+      "source": {
+        "model": "chromeWebStore"
+      },
+      "target": {
+        "model": "stark-site.website"
+      },
+      "kind": "sync",
+      "id": "1vobtpu"
+    },
+    "iwgpe5": {
+      "line": "solid",
+      "technology": "HTTPS link",
+      "title": "links to its privacy policy and its guide in",
+      "source": {
+        "model": "huginnChat"
+      },
+      "target": {
+        "model": "stark-site.website"
+      },
+      "kind": "sync",
+      "id": "iwgpe5"
+    }
+  },
+  "globals": {
+    "predicates": {},
+    "dynamicPredicates": {},
+    "styles": {
+      "languageLogos": [
+        {
+          "targets": [
+            {
+              "ref": {
+                "model": "stark-site.website"
+              }
+            }
+          ],
+          "style": {
+            "icon": "tech:typescript"
+          }
+        }
+      ]
+    }
+  },
+  "views": {
+    "stack": {
+      "_type": "element",
+      "tags": null,
+      "links": null,
+      "_stage": "layouted",
+      "sourcePath": "model/scan/stack-views.c4",
+      "description": {
+        "txt": "The elements with a code key, grouped by the language that the scan found."
+      },
+      "title": "Tech stack",
+      "id": "stack",
+      "autoLayout": {
+        "direction": "TB"
+      },
+      "notation": {
+        "nodes": [
+          {
+            "title": "Container: Web Application",
+            "shape": "browser",
+            "color": "c4-container",
+            "kinds": [
+              "webApp"
+            ]
+          }
+        ]
+      },
+      "hash": "eVoPWMemn0qbU5JiOEUkf7izB4KzH33G54yQA_4DVZs",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 400,
+        "height": 281
+      },
+      "nodes": [
+        {
+          "id": "@gr1",
+          "parent": null,
+          "kind": "@group",
+          "title": "TypeScript",
+          "color": "primary",
+          "shape": "rectangle",
+          "children": [
+            "stark-site.website"
+          ],
+          "inEdges": [],
+          "outEdges": [],
+          "level": 0,
+          "depth": 1,
+          "tags": [],
+          "style": {
+            "border": "dashed",
+            "opacity": 15
+          },
+          "x": 8,
+          "y": 8,
+          "width": 384,
+          "height": 265,
+          "labelBBox": {
+            "x": 6,
+            "y": 0,
+            "width": 73,
+            "height": 15
+          }
+        },
+        {
+          "id": "stark-site.website",
+          "parent": "@gr1",
+          "level": 1,
+          "children": [],
+          "inEdges": [],
+          "outEdges": [],
+          "title": "Website",
+          "modelRef": "stark-site.website",
+          "shape": "browser",
+          "color": "c4-container",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "The policies, the guide and its video, in the browser."
+          },
+          "tags": [],
+          "metadata": {
+            "code": [
+              "astro.config.mjs",
+              "src/content.config.ts",
+              "src/styles/"
+            ],
+            "frameworks": "astro",
+            "language": "TypeScript"
+          },
+          "notation": "Container: Web Application",
+          "technology": "Astro, Starlight, static HTML",
+          "kind": "webApp",
+          "links": [
+            {
+              "url": "https://github.com/21StarkCom/21stark-site/tree/HEAD/astro.config.mjs",
+              "title": "code: astro.config.mjs"
+            },
+            {
+              "url": "https://github.com/21StarkCom/21stark-site/tree/HEAD/src/content.config.ts",
+              "title": "code: src/content.config.ts"
+            },
+            {
+              "url": "https://github.com/21StarkCom/21stark-site/tree/HEAD/src/styles",
+              "title": "code: src/styles/"
+            }
+          ],
+          "icon": "tech:typescript",
+          "x": 40,
+          "y": 61,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 45,
+            "y": 46,
+            "width": 260,
+            "height": 85
+          }
+        }
+      ],
+      "edges": []
+    },
+    "index": {
+      "_type": "element",
+      "tags": null,
+      "links": null,
+      "_stage": "layouted",
+      "sourcePath": "model/views.c4",
+      "description": {
+        "txt": "Who reads the 21Stark site, who writes it, where it is hosted, and what links to its pages."
+      },
+      "title": "System Context: 21Stark site",
+      "id": "index",
+      "autoLayout": {
+        "direction": "TB"
+      },
+      "notation": {
+        "nodes": [
+          {
+            "title": "Person",
+            "shape": "person",
+            "color": "c4-person",
+            "kinds": [
+              "person"
+            ]
+          },
+          {
+            "title": "Software System",
+            "shape": "rectangle",
+            "color": "c4-system",
+            "kinds": [
+              "softwareSystem"
+            ]
+          },
+          {
+            "title": "Software System (external)",
+            "shape": "rectangle",
+            "color": "c4-external",
+            "kinds": [
+              "externalSystem"
+            ]
+          }
+        ]
+      },
+      "hash": "aZYV1ZP6HsksBuja_GVjX57s42dwWxeHWSwsJL2yRyE",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 2040,
+        "height": 847
+      },
+      "nodes": [
+        {
+          "id": "operator",
+          "parent": null,
+          "level": 0,
+          "children": [],
+          "inEdges": [],
+          "outEdges": [
+            "xjzatv"
+          ],
+          "title": "Operator",
+          "modelRef": "operator",
+          "shape": "person",
+          "color": "c4-person",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "Writes the policies and the guides, merges each change to main, and uploads the review package of a store review."
+          },
+          "tags": [],
+          "notation": "Person",
+          "kind": "person",
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 17,
+            "y": 47,
+            "width": 287,
+            "height": 83
+          }
+        },
+        {
+          "id": "extensionUser",
+          "parent": null,
+          "level": 0,
+          "children": [],
+          "inEdges": [],
+          "outEdges": [
+            "1u0p16j"
+          ],
+          "title": "Extension user",
+          "modelRef": "extensionUser",
+          "shape": "person",
+          "color": "c4-person",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "A user of a Huginn extension who reads its privacy policy or the Huginn Chat guide."
+          },
+          "tags": [],
+          "notation": "Person",
+          "kind": "person",
+          "x": 430,
+          "y": 0,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 15,
+            "y": 56,
+            "width": 289,
+            "height": 65
+          }
+        },
+        {
+          "id": "storeReviewer",
+          "parent": null,
+          "level": 0,
+          "children": [],
+          "inEdges": [],
+          "outEdges": [
+            "10npgzl"
+          ],
+          "title": "Store reviewer",
+          "modelRef": "storeReviewer",
+          "shape": "person",
+          "color": "c4-person",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "A Chrome Web Store reviewer who checks the privacy policy of a Huginn extension and installs Sleipnir for a review of Huginn Chat."
+          },
+          "tags": [],
+          "notation": "Person",
+          "kind": "person",
+          "x": 860,
+          "y": 0,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 15,
+            "y": 38,
+            "width": 290,
+            "height": 101
+          }
+        },
+        {
+          "id": "chromeWebStore",
+          "parent": null,
+          "level": 0,
+          "children": [],
+          "inEdges": [],
+          "outEdges": [
+            "xi37eq"
+          ],
+          "title": "Chrome Web Store",
+          "modelRef": "chromeWebStore",
+          "shape": "rectangle",
+          "color": "c4-external",
+          "icon": "tech:chrome-web-store",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "Lists the Huginn extensions, and links each listing to its privacy policy."
+          },
+          "tags": [],
+          "notation": "Software System (external)",
+          "kind": "externalSystem",
+          "x": 1290,
+          "y": 0,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 50,
+            "y": 47,
+            "width": 250,
+            "height": 83
+          }
+        },
+        {
+          "id": "huginnChat",
+          "parent": null,
+          "level": 0,
+          "children": [],
+          "inEdges": [],
+          "outEdges": [
+            "1vn5j5q"
+          ],
+          "title": "Huginn Chat",
+          "modelRef": "huginnChat",
+          "shape": "rectangle",
+          "color": "c4-external",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "The Chrome extension of Sleipnir with a side-panel chat. Its data notice links to its privacy policy, and with no Sleipnir app its popup links to its guide."
+          },
+          "tags": [],
+          "metadata": {
+            "fleetRepo": "sleipnir"
+          },
+          "notation": "Software System (external)",
+          "kind": "externalSystem",
+          "x": 1720,
+          "y": 0,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 19,
+            "y": 38,
+            "width": 282,
+            "height": 101
+          }
+        },
+        {
+          "id": "stark-site",
+          "parent": null,
+          "level": 0,
+          "children": [],
+          "inEdges": [
+            "xjzatv",
+            "1u0p16j",
+            "10npgzl",
+            "xi37eq",
+            "1vn5j5q"
+          ],
+          "outEdges": [
+            "1cpkbhy"
+          ],
+          "title": "21Stark site",
+          "modelRef": "stark-site",
+          "shape": "rectangle",
+          "color": "c4-system",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "The privacy policies and the guides of the fleet, at gh.21stark.com."
+          },
+          "tags": [],
+          "notation": "Software System",
+          "kind": "softwareSystem",
+          "navigateTo": "containers",
+          "x": 860,
+          "y": 342,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 20,
+            "y": 56,
+            "width": 280,
+            "height": 65
+          }
+        },
+        {
+          "id": "githubPages",
+          "parent": null,
+          "level": 0,
+          "children": [],
+          "inEdges": [
+            "1cpkbhy"
+          ],
+          "outEdges": [],
+          "title": "GitHub Pages",
+          "modelRef": "githubPages",
+          "shape": "rectangle",
+          "color": "c4-external",
+          "icon": "tech:github",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "Hosts the built site at gh.21stark.com and sends its pages to the browser."
+          },
+          "tags": [],
+          "notation": "Software System (external)",
+          "kind": "externalSystem",
+          "x": 860,
+          "y": 667,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 47,
+            "y": 47,
+            "width": 257,
+            "height": 83
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "xjzatv",
+          "source": "operator",
+          "target": "stark-site",
+          "label": "writes the pages and uploads\nthe review package of",
+          "points": [
+            [
+              320,
+              175
+            ],
+            [
+              390,
+              210
+            ],
+            [
+              475,
+              251
+            ],
+            [
+              553,
+              282
+            ],
+            [
+              650,
+              321
+            ],
+            [
+              761,
+              356
+            ],
+            [
+              850,
+              383
+            ]
+          ],
+          "labelBBox": {
+            "x": 553,
+            "y": 240,
+            "width": 196,
+            "height": 42
+          },
+          "parent": null,
+          "relations": [
+            "qcp1e3",
+            "gs4us9"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "kind": "sync",
+          "isCustomized": true
+        },
+        {
+          "id": "1u0p16j",
+          "source": "extensionUser",
+          "target": "stark-site",
+          "label": "reads the privacy\npolicies and the guide in",
+          "points": [
+            [
+              701,
+              180
+            ],
+            [
+              741,
+              212
+            ],
+            [
+              787,
+              249
+            ],
+            [
+              829,
+              282
+            ],
+            [
+              851,
+              299
+            ],
+            [
+              875,
+              318
+            ],
+            [
+              898,
+              336
+            ]
+          ],
+          "labelBBox": {
+            "x": 829,
+            "y": 240,
+            "width": 164,
+            "height": 42
+          },
+          "parent": null,
+          "relations": [
+            "prp08m"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "kind": "sync"
+        },
+        {
+          "id": "10npgzl",
+          "source": "storeReviewer",
+          "target": "stark-site",
+          "label": "reads the policies and gets\nthe review package from",
+          "points": [
+            [
+              1020,
+              180
+            ],
+            [
+              1020,
+              226
+            ],
+            [
+              1020,
+              284
+            ],
+            [
+              1020,
+              332
+            ]
+          ],
+          "labelBBox": {
+            "x": 1020,
+            "y": 240,
+            "width": 180,
+            "height": 42
+          },
+          "parent": null,
+          "relations": [
+            "14ey8vo",
+            "11gixhv"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "kind": "sync",
+          "isCustomized": true
+        },
+        {
+          "id": "1cpkbhy",
+          "source": "stark-site",
+          "target": "githubPages",
+          "label": "publishes its pages to",
+          "points": [
+            [
+              1020,
+              522
+            ],
+            [
+              1020,
+              564
+            ],
+            [
+              1020,
+              614
+            ],
+            [
+              1020,
+              657
+            ]
+          ],
+          "labelBBox": {
+            "x": 1021,
+            "y": 583,
+            "width": 149,
+            "height": 25
+          },
+          "parent": null,
+          "relations": [
+            "7cqbn"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "technology": "",
+          "kind": "sync",
+          "isCustomized": true
+        },
+        {
+          "id": "xi37eq",
+          "source": "chromeWebStore",
+          "target": "stark-site",
+          "label": "links each listing to its\nprivacy policy and its guide in",
+          "points": [
+            [
+              1350,
+              180
+            ],
+            [
+              1312,
+              213
+            ],
+            [
+              1268,
+              250
+            ],
+            [
+              1227,
+              282
+            ],
+            [
+              1204,
+              300
+            ],
+            [
+              1180,
+              318
+            ],
+            [
+              1156,
+              336
+            ]
+          ],
+          "labelBBox": {
+            "x": 1277,
+            "y": 240,
+            "width": 196,
+            "height": 42
+          },
+          "parent": null,
+          "relations": [
+            "1vobtpu"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "technology": "",
+          "kind": "sync",
+          "isCustomized": true
+        },
+        {
+          "id": "1vn5j5q",
+          "source": "huginnChat",
+          "target": "stark-site",
+          "label": "links to its privacy\npolicy and its guide in",
+          "points": [
+            [
+              1720,
+              179
+            ],
+            [
+              1653,
+              214
+            ],
+            [
+              1574,
+              252
+            ],
+            [
+              1500,
+              282
+            ],
+            [
+              1399,
+              323
+            ],
+            [
+              1283,
+              359
+            ],
+            [
+              1190,
+              386
+            ]
+          ],
+          "labelBBox": {
+            "x": 1586,
+            "y": 240,
+            "width": 148,
+            "height": 42
+          },
+          "parent": null,
+          "relations": [
+            "iwgpe5"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "technology": "",
+          "kind": "sync",
+          "isCustomized": true
+        }
+      ]
+    },
+    "containers": {
+      "_type": "element",
+      "tags": null,
+      "links": null,
+      "viewOf": "stark-site",
+      "_stage": "layouted",
+      "sourcePath": "model/views.c4",
+      "description": {
+        "txt": "The parts of the 21Stark site: the pages in the browser, their sources, the workflow that builds and deploys them, and the review downloads."
+      },
+      "title": "Containers: 21Stark site",
+      "id": "containers",
+      "autoLayout": {
+        "direction": "TB"
+      },
+      "notation": {
+        "nodes": [
+          {
+            "title": "Container: Web Application",
+            "shape": "browser",
+            "color": "c4-container",
+            "kinds": [
+              "webApp"
+            ]
+          },
+          {
+            "title": "Person",
+            "shape": "person",
+            "color": "c4-person",
+            "kinds": [
+              "person"
+            ]
+          },
+          {
+            "title": "Container",
+            "shape": "rectangle",
+            "color": "c4-container",
+            "kinds": [
+              "container"
+            ]
+          },
+          {
+            "title": "Software System",
+            "shape": "rectangle",
+            "color": "c4-system",
+            "kinds": [
+              "softwareSystem"
+            ]
+          },
+          {
+            "title": "Software System (external)",
+            "shape": "rectangle",
+            "color": "c4-external",
+            "kinds": [
+              "externalSystem"
+            ]
+          },
+          {
+            "title": "Container: Database",
+            "shape": "storage",
+            "color": "c4-container",
+            "kinds": [
+              "database"
+            ]
+          }
+        ]
+      },
+      "hash": "RoteSzqev2THakokC_KLh1KoMPtzuROCS-GdEVmx3jA",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 2124,
+        "height": 930
+      },
+      "nodes": [
+        {
+          "id": "operator",
+          "parent": null,
+          "level": 0,
+          "children": [],
+          "inEdges": [],
+          "outEdges": [
+            "1rtcct9",
+            "1opygw0"
+          ],
+          "title": "Operator",
+          "modelRef": "operator",
+          "shape": "person",
+          "color": "c4-person",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "Writes the policies and the guides, merges each change to main, and uploads the review package of a store review."
+          },
+          "tags": [],
+          "notation": "Person",
+          "kind": "person",
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 17,
+            "y": 47,
+            "width": 287,
+            "height": 83
+          }
+        },
+        {
+          "id": "extensionUser",
+          "parent": null,
+          "level": 0,
+          "children": [],
+          "inEdges": [],
+          "outEdges": [
+            "b1yrqm"
+          ],
+          "title": "Extension user",
+          "modelRef": "extensionUser",
+          "shape": "person",
+          "color": "c4-person",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "A user of a Huginn extension who reads its privacy policy or the Huginn Chat guide."
+          },
+          "tags": [],
+          "notation": "Person",
+          "kind": "person",
+          "x": 1374,
+          "y": 0,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 15,
+            "y": 56,
+            "width": 289,
+            "height": 65
+          }
+        },
+        {
+          "id": "storeReviewer",
+          "parent": null,
+          "level": 0,
+          "children": [],
+          "inEdges": [],
+          "outEdges": [
+            "1vdg044",
+            "2ky53m"
+          ],
+          "title": "Store reviewer",
+          "modelRef": "storeReviewer",
+          "shape": "person",
+          "color": "c4-person",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "A Chrome Web Store reviewer who checks the privacy policy of a Huginn extension and installs Sleipnir for a review of Huginn Chat."
+          },
+          "tags": [],
+          "notation": "Person",
+          "kind": "person",
+          "x": 451,
+          "y": 0,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 15,
+            "y": 38,
+            "width": 290,
+            "height": 101
+          }
+        },
+        {
+          "id": "githubPages",
+          "parent": null,
+          "level": 0,
+          "children": [],
+          "inEdges": [
+            "mfy1cw"
+          ],
+          "outEdges": [
+            "vals03"
+          ],
+          "title": "GitHub Pages",
+          "modelRef": "githubPages",
+          "shape": "rectangle",
+          "color": "c4-external",
+          "icon": "tech:github",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "Hosts the built site at gh.21stark.com and sends its pages to the browser."
+          },
+          "tags": [],
+          "notation": "Software System (external)",
+          "kind": "externalSystem",
+          "x": 1603,
+          "y": 702,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 47,
+            "y": 47,
+            "width": 257,
+            "height": 83
+          }
+        },
+        {
+          "id": "chromeWebStore",
+          "parent": null,
+          "level": 0,
+          "children": [],
+          "inEdges": [],
+          "outEdges": [
+            "1wo1uzb"
+          ],
+          "title": "Chrome Web Store",
+          "modelRef": "chromeWebStore",
+          "shape": "rectangle",
+          "color": "c4-external",
+          "icon": "tech:chrome-web-store",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "Lists the Huginn extensions, and links each listing to its privacy policy."
+          },
+          "tags": [],
+          "notation": "Software System (external)",
+          "kind": "externalSystem",
+          "x": 1804,
+          "y": 0,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 50,
+            "y": 47,
+            "width": 250,
+            "height": 83
+          }
+        },
+        {
+          "id": "huginnChat",
+          "parent": null,
+          "level": 0,
+          "children": [],
+          "inEdges": [],
+          "outEdges": [
+            "1fw6ru3"
+          ],
+          "title": "Huginn Chat",
+          "modelRef": "huginnChat",
+          "shape": "rectangle",
+          "color": "c4-external",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "The Chrome extension of Sleipnir with a side-panel chat. Its data notice links to its privacy policy, and with no Sleipnir app its popup links to its guide."
+          },
+          "tags": [],
+          "metadata": {
+            "fleetRepo": "sleipnir"
+          },
+          "notation": "Software System (external)",
+          "kind": "externalSystem",
+          "x": 944,
+          "y": 0,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 19,
+            "y": 38,
+            "width": 282,
+            "height": 101
+          }
+        },
+        {
+          "id": "stark-site",
+          "parent": null,
+          "level": 0,
+          "children": [
+            "stark-site.reviewDownloads",
+            "stark-site.website",
+            "stark-site.siteWorkflow",
+            "stark-site.pages"
+          ],
+          "inEdges": [
+            "1rtcct9",
+            "1opygw0",
+            "b1yrqm",
+            "1vdg044",
+            "2ky53m",
+            "vals03",
+            "1wo1uzb",
+            "1fw6ru3"
+          ],
+          "outEdges": [
+            "mfy1cw"
+          ],
+          "title": "21Stark site",
+          "modelRef": "stark-site",
+          "shape": "rectangle",
+          "color": "c4-system",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "The privacy policies and the guides of the fleet, at gh.21stark.com."
+          },
+          "tags": [],
+          "notation": "Software System",
+          "kind": "softwareSystem",
+          "depth": 1,
+          "x": 303,
+          "y": 303,
+          "width": 1260,
+          "height": 619,
+          "labelBBox": {
+            "x": 6,
+            "y": 0,
+            "width": 82,
+            "height": 15
+          }
+        },
+        {
+          "id": "stark-site.reviewDownloads",
+          "parent": "stark-site",
+          "level": 1,
+          "children": [],
+          "inEdges": [
+            "1opygw0",
+            "2ky53m"
+          ],
+          "outEdges": [],
+          "title": "Review downloads",
+          "modelRef": "stark-site.reviewDownloads",
+          "shape": "storage",
+          "color": "c4-container",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "The signed Sleipnir installer package for a Chrome Web Store review of Huginn Chat, with its SHA-256 file, as a release of the 21stark-site repo."
+          },
+          "tags": [],
+          "notation": "Container: Database",
+          "technology": "GitHub Releases",
+          "kind": "database",
+          "x": 343,
+          "y": 364,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 16,
+            "y": 28,
+            "width": 288,
+            "height": 121
+          }
+        },
+        {
+          "id": "stark-site.website",
+          "parent": "stark-site",
+          "level": 1,
+          "children": [],
+          "inEdges": [
+            "b1yrqm",
+            "1vdg044",
+            "vals03",
+            "1wo1uzb",
+            "1fw6ru3"
+          ],
+          "outEdges": [],
+          "title": "Website",
+          "modelRef": "stark-site.website",
+          "shape": "browser",
+          "color": "c4-container",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "The policies, the guide and its video, in the browser."
+          },
+          "tags": [],
+          "metadata": {
+            "code": [
+              "astro.config.mjs",
+              "src/content.config.ts",
+              "src/styles/"
+            ],
+            "frameworks": "astro",
+            "language": "TypeScript"
+          },
+          "notation": "Container: Web Application",
+          "technology": "Astro, Starlight, static HTML",
+          "kind": "webApp",
+          "links": [
+            {
+              "url": "https://github.com/21StarkCom/21stark-site/tree/HEAD/astro.config.mjs",
+              "title": "code: astro.config.mjs"
+            },
+            {
+              "url": "https://github.com/21StarkCom/21stark-site/tree/HEAD/src/content.config.ts",
+              "title": "code: src/content.config.ts"
+            },
+            {
+              "url": "https://github.com/21StarkCom/21stark-site/tree/HEAD/src/styles",
+              "title": "code: src/styles/"
+            }
+          ],
+          "x": 1203,
+          "y": 364,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 16,
+            "y": 46,
+            "width": 288,
+            "height": 85
+          }
+        },
+        {
+          "id": "stark-site.siteWorkflow",
+          "parent": "stark-site",
+          "level": 1,
+          "children": [],
+          "inEdges": [],
+          "outEdges": [
+            "vus8du",
+            "mfy1cw"
+          ],
+          "title": "Site workflow",
+          "modelRef": "stark-site.siteWorkflow",
+          "shape": "rectangle",
+          "color": "c4-container",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "Builds the site with Astro on each pull request, and on each push to main builds it and deploys it to GitHub Pages."
+          },
+          "tags": [],
+          "metadata": {
+            "code": ".github/workflows/site.yml"
+          },
+          "notation": "Container",
+          "technology": "GitHub Actions, Node.js 24",
+          "kind": "container",
+          "links": [
+            {
+              "url": "https://github.com/21StarkCom/21stark-site/tree/HEAD/.github/workflows/site.yml",
+              "title": "code: .github/workflows/site.yml"
+            }
+          ],
+          "x": 773,
+          "y": 364,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 21,
+            "y": 37,
+            "width": 278,
+            "height": 103
+          }
+        },
+        {
+          "id": "stark-site.pages",
+          "parent": "stark-site",
+          "level": 1,
+          "children": [],
+          "inEdges": [
+            "1rtcct9",
+            "vus8du"
+          ],
+          "outEdges": [],
+          "title": "Page sources",
+          "modelRef": "stark-site.pages",
+          "shape": "storage",
+          "color": "c4-container",
+          "style": {
+            "opacity": 15,
+            "size": "md"
+          },
+          "description": {
+            "txt": "The text of each policy and guide, and the video of the Huginn Chat guide, in the 21stark-site repo."
+          },
+          "tags": [],
+          "metadata": {
+            "code": [
+              "src/content/docs/",
+              "public/"
+            ]
+          },
+          "notation": "Container: Database",
+          "technology": "Git, Markdown and MDX files",
+          "kind": "database",
+          "links": [
+            {
+              "url": "https://github.com/21StarkCom/21stark-site/tree/HEAD/public",
+              "title": "code: public/"
+            },
+            {
+              "url": "https://github.com/21StarkCom/21stark-site/tree/HEAD/src/content/docs",
+              "title": "code: src/content/docs/"
+            }
+          ],
+          "x": 773,
+          "y": 702,
+          "width": 320,
+          "height": 180,
+          "labelBBox": {
+            "x": 19,
+            "y": 37,
+            "width": 283,
+            "height": 103
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "1rtcct9",
+          "source": "operator",
+          "target": "stark-site.pages",
+          "label": "writes the policies\nand the guides in",
+          "points": [
+            [
+              132,
+              180
+            ],
+            [
+              107,
+              279
+            ],
+            [
+              84,
+              438
+            ],
+            [
+              161,
+              544
+            ],
+            [
+              233,
+              642
+            ],
+            [
+              557,
+              720
+            ],
+            [
+              762,
+              761
+            ]
+          ],
+          "labelBBox": {
+            "x": 162,
+            "y": 433,
+            "width": 127,
+            "height": 42
+          },
+          "parent": null,
+          "relations": [
+            "qcp1e3"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "kind": "sync"
+        },
+        {
+          "id": "1opygw0",
+          "source": "operator",
+          "target": "stark-site.reviewDownloads",
+          "label": "uploads the review package\nof a store review to",
+          "points": [
+            [
+              228,
+              180
+            ],
+            [
+              258,
+              216
+            ],
+            [
+              293,
+              259
+            ],
+            [
+              328,
+              295
+            ],
+            [
+              348,
+              316
+            ],
+            [
+              371,
+              338
+            ],
+            [
+              393,
+              358
+            ]
+          ],
+          "labelBBox": {
+            "x": 329,
+            "y": 247,
+            "width": 187,
+            "height": 42
+          },
+          "parent": null,
+          "relations": [
+            "gs4us9"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "kind": "sync"
+        },
+        {
+          "id": "b1yrqm",
+          "source": "extensionUser",
+          "target": "stark-site.website",
+          "label": "reads the privacy\npolicies and the guide in",
+          "points": [
+            [
+              1492,
+              180
+            ],
+            [
+              1467,
+              233
+            ],
+            [
+              1435,
+              300
+            ],
+            [
+              1409,
+              355
+            ]
+          ],
+          "labelBBox": {
+            "x": 1461,
+            "y": 247,
+            "width": 164,
+            "height": 42
+          },
+          "parent": null,
+          "relations": [
+            "prp08m"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "kind": "sync"
+        },
+        {
+          "id": "1vdg044",
+          "source": "storeReviewer",
+          "target": "stark-site.website",
+          "label": "reads the privacy policies\nand the review steps in",
+          "points": [
+            [
+              752,
+              180
+            ],
+            [
+              827,
+              223
+            ],
+            [
+              923,
+              270
+            ],
+            [
+              1016,
+              295
+            ],
+            [
+              1073,
+              310
+            ],
+            [
+              1093,
+              284
+            ],
+            [
+              1148,
+              303
+            ],
+            [
+              1184,
+              316
+            ],
+            [
+              1220,
+              336
+            ],
+            [
+              1252,
+              358
+            ]
+          ],
+          "labelBBox": {
+            "x": 1017,
+            "y": 247,
+            "width": 171,
+            "height": 42
+          },
+          "parent": null,
+          "relations": [
+            "14ey8vo"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "kind": "sync"
+        },
+        {
+          "id": "2ky53m",
+          "source": "storeReviewer",
+          "target": "stark-site.reviewDownloads",
+          "label": "downloads the Sleipnir\ninstaller package from",
+          "points": [
+            [
+              577,
+              180
+            ],
+            [
+              570,
+              200
+            ],
+            [
+              563,
+              220
+            ],
+            [
+              557,
+              240
+            ],
+            [
+              546,
+              277
+            ],
+            [
+              535,
+              317
+            ],
+            [
+              526,
+              353
+            ]
+          ],
+          "labelBBox": {
+            "x": 557,
+            "y": 247,
+            "width": 156,
+            "height": 42
+          },
+          "parent": null,
+          "relations": [
+            "11gixhv"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "kind": "sync"
+        },
+        {
+          "id": "vals03",
+          "source": "githubPages",
+          "target": "stark-site.website",
+          "label": "delivers to the browser",
+          "points": [
+            [
+              1657,
+              702
+            ],
+            [
+              1602,
+              656
+            ],
+            [
+              1534,
+              598
+            ],
+            [
+              1477,
+              551
+            ]
+          ],
+          "labelBBox": {
+            "x": 1576,
+            "y": 604,
+            "width": 157,
+            "height": 38
+          },
+          "parent": null,
+          "relations": [
+            "1i4wdwn"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "technology": "HTTPS",
+          "kind": "sync"
+        },
+        {
+          "id": "1wo1uzb",
+          "source": "chromeWebStore",
+          "target": "stark-site.website",
+          "label": "links each listing to its\nprivacy policy and its guide in",
+          "points": [
+            [
+              1833,
+              180
+            ],
+            [
+              1778,
+              217
+            ],
+            [
+              1712,
+              259
+            ],
+            [
+              1652,
+              295
+            ],
+            [
+              1614,
+              318
+            ],
+            [
+              1572,
+              342
+            ],
+            [
+              1532,
+              364
+            ]
+          ],
+          "labelBBox": {
+            "x": 1739,
+            "y": 241,
+            "width": 196,
+            "height": 55
+          },
+          "parent": null,
+          "relations": [
+            "1vobtpu"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "technology": "HTTPS link",
+          "kind": "sync"
+        },
+        {
+          "id": "1fw6ru3",
+          "source": "huginnChat",
+          "target": "stark-site.website",
+          "label": "links to its privacy\npolicy and its guide in",
+          "points": [
+            [
+              1167,
+              180
+            ],
+            [
+              1206,
+              233
+            ],
+            [
+              1254,
+              301
+            ],
+            [
+              1293,
+              356
+            ]
+          ],
+          "labelBBox": {
+            "x": 1249,
+            "y": 241,
+            "width": 148,
+            "height": 55
+          },
+          "parent": null,
+          "relations": [
+            "iwgpe5"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "technology": "HTTPS link",
+          "kind": "sync"
+        },
+        {
+          "id": "vus8du",
+          "source": "stark-site.siteWorkflow",
+          "target": "stark-site.pages",
+          "label": "builds the site from",
+          "points": [
+            [
+              933,
+              544
+            ],
+            [
+              933,
+              589
+            ],
+            [
+              933,
+              644
+            ],
+            [
+              933,
+              691
+            ]
+          ],
+          "labelBBox": {
+            "x": 933,
+            "y": 604,
+            "width": 134,
+            "height": 38
+          },
+          "parent": "stark-site",
+          "relations": [
+            "1c1v1cg"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "technology": "Git checkout",
+          "kind": "sync"
+        },
+        {
+          "id": "mfy1cw",
+          "source": "stark-site.siteWorkflow",
+          "target": "githubPages",
+          "label": "deploys the built site to",
+          "points": [
+            [
+              1093,
+              531
+            ],
+            [
+              1173,
+              568
+            ],
+            [
+              1273,
+              610
+            ],
+            [
+              1365,
+              642
+            ],
+            [
+              1463,
+              676
+            ],
+            [
+              1493,
+              665
+            ],
+            [
+              1590,
+              702
+            ],
+            [
+              1591,
+              703
+            ],
+            [
+              1593,
+              703
+            ],
+            [
+              1594,
+              704
+            ]
+          ],
+          "labelBBox": {
+            "x": 1366,
+            "y": 604,
+            "width": 159,
+            "height": 38
+          },
+          "parent": null,
+          "relations": [
+            "7cqbn"
+          ],
+          "color": "gray",
+          "line": "solid",
+          "head": "normal",
+          "technology": "HTTPS",
+          "kind": "sync"
+        }
+      ]
+    }
+  },
+  "deployments": {
+    "elements": {},
+    "relations": {}
+  },
+  "imports": {},
+  "manualLayouts": {}
+}

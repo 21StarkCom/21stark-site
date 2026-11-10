@@ -1,0 +1,22 @@
+---
+title: "System Context: 21Stark site"
+---
+graph TB
+  Operator@{ icon: "fa:user", shape: rounded, label: "Operator" }
+  ExtensionUser@{ icon: "fa:user", shape: rounded, label: "Extension user" }
+  StoreReviewer@{ icon: "fa:user", shape: rounded, label: "Store reviewer" }
+  ChromeWebStore@{ shape: rectangle, label: "Chrome Web Store" }
+  HuginnChat@{ shape: rectangle, label: "Huginn Chat" }
+  Stark_site@{ shape: rectangle, label: "21Stark site" }
+  GithubPages@{ shape: rectangle, label: "GitHub Pages" }
+  Operator -- "`writes the pages and uploads the review package of`" --> Stark_site
+  ExtensionUser -- "`reads the privacy policies and the guide in`" --> Stark_site
+  StoreReviewer -- "`reads the policies and gets the review package from`" --> Stark_site
+  Stark_site -- "`publishes its pages to`" --> GithubPages
+  ChromeWebStore -- "`links each listing to its privacy policy and its guide in`" --> Stark_site
+  HuginnChat -- "`links to its privacy policy and its guide in`" --> Stark_site
+  classDef c4_external fill:#F1F0EF,stroke:#c8c7c6,color:#504f4e
+  class ChromeWebStore,HuginnChat,GithubPages c4_external
+  classDef c4_system fill:#0D74CE,stroke:#0052a6,color:#e0ffff
+  class Stark_site c4_system
+  linkStyle 0,1,2,3,4,5 stroke:#8D8D8D

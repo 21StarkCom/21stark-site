@@ -1,0 +1,21 @@
+element operator | person | Operator |  | Writes the policies and the guides, merges each change to main, and uploads the review package of a store review.
+element extensionUser | person | Extension user |  | A user of a Huginn extension who reads its privacy policy or the Huginn Chat guide.
+element storeReviewer | person | Store reviewer |  | A Chrome Web Store reviewer who checks the privacy policy of a Huginn extension and installs Sleipnir for a review of Huginn Chat.
+element stark-site | softwareSystem | 21Stark site |  | The public site gh.21stark.com: the privacy policy of each Huginn extension, which its Chrome Web Store listing links to, and the Huginn Chat guide. A page keeps its address, because a store listing links to it.
+element githubPages | externalSystem | GitHub Pages |  | Hosts the built site at gh.21stark.com and sends its pages to the browser.
+element chromeWebStore | externalSystem | Chrome Web Store |  | Lists the Huginn extensions. Each listing links to the privacy policy of its extension, and the listing and the test instructions of Huginn Chat link to its guide.
+element huginnChat | externalSystem | Huginn Chat |  | The Chrome extension of Sleipnir with a side-panel chat. Its data notice links to its privacy policy, and with no Sleipnir app its popup links to its guide.
+element stark-site.website | webApp | Website | Astro, Starlight, static HTML | Shows the privacy policy of each Huginn extension, and the Huginn Chat guide with its video and its install steps for a review, in the browser.
+element stark-site.siteWorkflow | container | Site workflow | GitHub Actions, Node.js 24 | Builds the site with Astro on each pull request, and on each push to main builds it and deploys it to GitHub Pages.
+element stark-site.pages | database | Page sources | Git, Markdown and MDX files | The text of each policy and guide, and the video of the Huginn Chat guide, in the 21stark-site repo.
+element stark-site.reviewDownloads | database | Review downloads | GitHub Releases | The signed Sleipnir installer package for a Chrome Web Store review of Huginn Chat, with its SHA-256 file, as a release of the 21stark-site repo.
+view stack | Tech stack | generated/png/stack.png
+view index | System Context: 21Stark site | generated/png/index.png
+view containers | Containers: 21Stark site | generated/png/containers.png
+file kit/spec.c4
+file model/model.c4
+file model/scan/links.c4
+file model/scan/logos.c4
+file model/scan/stack-views.c4
+file model/scan/stack.c4
+file model/views.c4

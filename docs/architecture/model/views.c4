@@ -1,0 +1,37 @@
+// One view for each question: who uses the 21Stark site and what links to it, and
+// what builds and serves it.
+
+views {
+  // Level 1: System Context
+  view index {
+    title 'System Context: 21Stark site'
+    description 'Who reads the 21Stark site, who writes it, where it is hosted, and what links to its pages.'
+    include *
+    include operator -> stark-site with {
+      title 'writes the pages and uploads the review package of'
+    }
+    include storeReviewer -> stark-site with {
+      title 'reads the policies and gets the review package from'
+    }
+    include stark-site -> githubPages with {
+      title 'publishes its pages to'
+      technology ''
+    }
+    include chromeWebStore -> stark-site with {
+      title 'links each listing to its privacy policy and its guide in'
+      technology ''
+    }
+    include huginnChat -> stark-site with {
+      title 'links to its privacy policy and its guide in'
+      technology ''
+    }
+    exclude githubPages -> stark-site
+  }
+
+  // Level 2: Containers
+  view containers of stark-site {
+    title 'Containers: 21Stark site'
+    description 'The parts of the 21Stark site: the pages in the browser, their sources, the workflow that builds and deploys them, and the review downloads.'
+    include *
+  }
+}

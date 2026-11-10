@@ -1,0 +1,11 @@
+// Written by floorplan scan. Do not edit.
+// The tech stack of each element with a code key. floorplan scan and floorplan build write this file again.
+
+model {
+  extend stark-site.website {
+    metadata {
+      frameworks ['astro']
+      language 'TypeScript'
+    }
+  }
+}
