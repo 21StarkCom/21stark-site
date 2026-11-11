@@ -16,6 +16,7 @@
     "astro": "^7.2.10"
   },
   "allowScripts": {
-    "esbuild": true
+    "esbuild": true,
+    "fsevents": false
   }
 }

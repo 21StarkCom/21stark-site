@@ -13,13 +13,14 @@ The custom domain is a CNAME in the `stark21-com` zone, managed in `ev-infra-gro
 | --- | --- |
 | `src/content/docs/policies/<product>/` | Privacy pages, one folder per product |
 | `src/styles/21stark.css` | The theme: it imports a `@21starkcom/themes` file and `@21starkcom/static-kit/starlight.css`, and holds no colour value |
-| `.npmrc` | Reads `@21starkcom` packages from GitHub Packages with `NODE_AUTH_TOKEN` |
+| `.npmrc` | Reads `@21starkcom` packages from GitHub Packages with `NODE_AUTH_TOKEN`, and fails an install script that `allowScripts` does not name |
 | `astro.config.mjs` | Site settings and the sidebar. Add new pages to the sidebar here |
 
 ## Work on it
 
 ```bash
-NODE_AUTH_TOKEN=$(gh auth token) npm ci   # the token needs read:packages
+gh auth refresh -s read:packages          # once: the token needs read:packages
+NODE_AUTH_TOKEN=$(gh auth token) npm ci
 npm run dev       # local preview at http://localhost:4321
 npm run build     # the same build CI runs
 ```

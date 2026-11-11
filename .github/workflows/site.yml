@@ -33,7 +33,8 @@ jobs:
           node-version: 24
           cache: npm
       # npm ci fails on any lockfile drift, so CI builds exactly what was reviewed. Only this step gets the token, read
-      # only; package.json's allowScripts lets one install script run (esbuild's).
+      # only; package.json's allowScripts names the one install script that may run (esbuild's), and .npmrc's
+      # strict-allow-scripts fails the install on any other.
       - run: npm ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
