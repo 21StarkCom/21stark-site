@@ -10,10 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@21starkcom/static-kit": "0.31.0",
+    "@21starkcom/themes": "0.11.0",
     "@astrojs/starlight": "^0.42.5",
     "astro": "^7.2.10"
   },
   "allowScripts": {
-    "esbuild": true
+    "esbuild": true,
+    "fsevents": false
   }
 }
