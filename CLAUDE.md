@@ -11,5 +11,7 @@ Source for gh.21stark.com, an Astro Starlight site. See `README.md` for the layo
   updated" line. A Chrome Web Store listing links to each privacy page, so never move or rename one.
 - **New pages go in the sidebar.** Pages are listed by hand in `astro.config.mjs`.
 - **Accessible by default.** One `h1` per page (the frontmatter `title`), ordered headings, link text that names its
-  target (never three "Privacy policy" links side by side), and the colours in `src/styles/21stark.css`, which meet
-  WCAG AA contrast.
+  target (never three "Privacy policy" links side by side), and the colours of the `@21starkcom/themes` file that
+  `src/styles/21stark.css` imports, which meet WCAG AA contrast.
+- **No colour values in the site's CSS.** To change a colour, import another theme file in
+  `src/styles/21stark.css`. Never pick amber, lime, mint, sky or yellow: their link text misses AA on the light page.

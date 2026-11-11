@@ -19,17 +19,24 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # npm ci reads the @21starkcom packages from GitHub Packages (.npmrc).
+      packages: read
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          # Nothing after checkout needs the token, so npm's install scripts never see it.
+          # Nothing after checkout needs the git token, so git never keeps it.
           persist-credentials: false
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 24
           cache: npm
-      # npm ci fails on any lockfile drift, so CI builds exactly what was reviewed.
+      # npm ci fails on any lockfile drift, so CI builds exactly what was reviewed. Only this step gets the token, read
+      # only; package.json's allowScripts lets one install script run (esbuild's).
       - run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm run build
       # Only a run that deploys needs the artifact.
       - if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
