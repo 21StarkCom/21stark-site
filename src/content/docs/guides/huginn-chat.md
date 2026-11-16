@@ -1,6 +1,6 @@
 ---
 title: Get started with Huginn Chat
-description: What Huginn Chat needs, how to connect it or install it for review, and what Chrome's debugger bar means.
+description: What Huginn Chat needs, how to connect it or install it for review, videos of what it does, and what Chrome's debugger bar means.
 ---
 
 Huginn Chat is a Chrome extension with a chat in Chrome's side panel. You talk to an AI agent, Claude Code or Codex,
@@ -58,13 +58,18 @@ Huginn Chat's popup then says **Connected**. Press **Open chat**, and the chat p
 
 A chat needs your own Claude Code or Codex, installed and signed in on the Mac, as [What you need](#what-you-need)
 says. The installer package has no agent account of its own. For a chat that acts on a tab, also grant actions, as
-the end of [Connect it](#connect-it) shows. The video in the Chrome Web Store listing shows a chat, and so does the
-video in [Watch it work](#watch-it-work).
+the end of [Connect it](#connect-it) shows. The video in the Chrome Web Store listing shows a chat, and so do the
+videos in [Watch it work](#watch-it-work).
 
 ## Watch it work
 
-This 55-second video shows Huginn Chat connected to the Sleipnir app. It uses a throwaway Chrome profile and W3C's
-public "Before and After Demonstration" test pages. The video has no sound.
+Each video below shows one real chat with Claude Code, connected to the Sleipnir app. Each one uses a throwaway
+Chrome profile and W3C's public "Before and After Demonstration" test pages. The videos have no sound, so the text
+under each video says what it shows. A long chat plays faster than real time, and its captions say so.
+
+### Read a page, click and check it
+
+This 55-second video shows the whole start: the data notice, **Open chat**, and one chat.
 
 <video controls preload="metadata" width="1280" height="800" src="/videos/huginn-chat.mp4"></video>
 
@@ -77,6 +82,53 @@ In order, the video shows:
 - the agent's answer, and the script that it ran.
 
 To watch it in another player, [download the Huginn Chat video (MP4, 1.5 MB)](/videos/huginn-chat.mp4).
+
+### Fill in a form, and stop before Submit
+
+In this 46-second video, you ask the agent to fill in a survey with sample answers. The agent fills
+in the form and stops before **Submit**, so you check the answers and send the form yourself.
+
+<video controls preload="metadata" width="1280" height="800" poster="/videos/huginn-chat-fill-form.png" src="/videos/huginn-chat-fill-form.mp4"></video>
+
+In order, the video shows:
+
+- the request in the side panel;
+- the agent as it reads the form;
+- each field as the agent fills it: a park, a city, a title, a name, and an email address in both email fields;
+- the agent's answer, which lists what it filled in and says that it did not press **Submit**.
+
+To watch it in another player, [download the form video (MP4, 1.0 MB)](/videos/huginn-chat-fill-form.mp4).
+
+### Only the actions you allow
+
+In this 42-second video, the installation may only read pages: its one grant is `read:*`. The agent
+asks for a click, and Huginn refuses it. Then you allow one more action, and the agent's next try works.
+
+<video controls preload="metadata" width="1280" height="800" poster="/videos/huginn-chat-grants.png" src="/videos/huginn-chat-grants.mp4"></video>
+
+In order, the video shows:
+
+- the agent as it reads the page, with its one grant;
+- Huginn's refusal of the agent's click, and the agent's answer, which names the grant that it needs;
+- the grant of one more action: `slp huginn allow <installation id> click`;
+- the agent's second try, which clicks the **Tickets** tab, and its answer.
+
+To watch it in another player, [download the grants video (MP4, 1.2 MB)](/videos/huginn-chat-grants.mp4).
+
+### Turn a page into a table
+
+In this 20-second video, you ask the agent for the ticket prices on a page. The agent reads the
+page and answers with a table that you can copy.
+
+<video controls preload="metadata" width="1280" height="800" poster="/videos/huginn-chat-page-to-table.png" src="/videos/huginn-chat-page-to-table.mp4"></video>
+
+In order, the video shows:
+
+- the request in the side panel;
+- the agent as it reads the page;
+- the agent's answer: a table with each ticket type, its show and its price range.
+
+To watch it in another player, [download the table video (MP4, 0.6 MB)](/videos/huginn-chat-page-to-table.mp4).
 
 ## Chrome's debugger bar
 
