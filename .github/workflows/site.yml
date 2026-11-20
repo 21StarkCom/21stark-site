@@ -1,10 +1,19 @@
 name: Site
 
-# Every pull request must build. Every push to main builds and publishes to GitHub Pages.
+# Each pull request builds. Each push to main builds and publishes to GitHub Pages.
+# The exception is a change of only files the site never reads: the build skips it.
+# Nothing requires this check, so a workflow-level filter cannot leave a PR waiting.
 on:
   push:
     branches: [main]
+    paths-ignore: &not-site
+      - 'README.md'
+      - 'CLAUDE.md'
+      - 'docs/**'
+      - '.gitleaks.toml'
+      - '.github/workflows/secret-scan.yml'
   pull_request:
+    paths-ignore: *not-site
   workflow_dispatch:
 
 permissions:
