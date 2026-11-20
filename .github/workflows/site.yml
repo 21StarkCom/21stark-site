@@ -1,8 +1,8 @@
 name: Site
 
-# Every pull request must build. Every push to main builds and publishes to GitHub Pages.
-# Skip the build when only files the site never reads change. Nothing requires
-# this check, so a workflow-level filter cannot leave a PR waiting.
+# Each pull request builds. Each push to main builds and publishes to GitHub Pages.
+# The exception is a change of only files the site never reads: the build skips it.
+# Nothing requires this check, so a workflow-level filter cannot leave a PR waiting.
 on:
   push:
     branches: [main]
